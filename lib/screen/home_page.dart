@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kuis_mobile_123230070_ifb/models/newsmodel.dart';
+import 'package:kuis_mobile_123230070_ifb/screen/login_page.dart';
 import 'package:kuis_mobile_123230070_ifb/screen/profile_page.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
@@ -30,7 +31,11 @@ class _HomePageState extends State<HomePage> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+                (route) => false,
+              );
             },
             icon: Icon(Icons.logout, color: Colors.white),
           ),
